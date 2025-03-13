@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Item</title>
+  <!-- リセットCSS: ブラウザのデフォルトスタイルをリセット -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css" />
+  <!-- Googleフォントの読み込み -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- カスタムCSSの読み込み -->
+  <link rel="stylesheet" href="../css/item.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="tabs">
+      <a href="category.php" class="tab">Category</a>
+      <a href="checklist.php" class="tab">Checklist</a>
+      <a href="item.php" class="tab active">Item</a>
+    </div>
+    <!-- タスク一覧 -->
+    <div class="content">
+      <ul class="todo-list">
+        <li class="todo-item">
+          <div class="task-left">
+            <input type="checkbox" class="task-checkbox" />
+            <span class="task-name">タスク 1</span>
+          </div>
+          <div class="task-right">
+            <button class="edit-button">Edit</button>
+            <button class="delete-button">Delete</button>
+          </div>
+        </li>
+      </ul>
+      <div class="button-container">
+        <button class="oval-button add-button" onclick="window.location.href='add_checklist.php'">
+          <span class="plus-icon">+</span>
+          Add Item
+        </button>
+
+        <!-- <button
+            type="button"
+            class="return-button"
+            onclick="window.location.href='target.php';"
+          >
+            ← Return
+          </button> -->
+      </div>
+      <!-- タスク追加ボタン -->
+    </div>
+</body>
+
+</html>

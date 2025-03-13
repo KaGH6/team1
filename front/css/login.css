@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7fafe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.form-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px; /* 必要に応じて調整 */
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.auth-form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+}
+
+.auth-form input::placeholder {
+  color: #a9a9a9;
+}
+
+.button-group {
+  display: flex;
+  gap: 5px;
+}
+
+.login-btn {
+  flex: 1;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+.signup-btn {
+  flex: 1;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup-btn:hover {
+  background-color: #218838;
+}
+
+.guest-login-btn {
+  flex: 1;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #6c757d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.guest-login-btn:hover {
+  background-color: #5a6268;
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <title>edit_checklist</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- リセットCSS: ブラウザのデフォルトスタイルをリセット -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css" />
+  <link rel="stylesheet" href="../css/add_or_edit.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Googleフォントの読み込み (オプション) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- ナビゲーションタブ -->
+    <div class="tabs">
+      <a href="category.php" class="tab">Category</a>
+      <a href="checklist.php" class="tab">Checklist</a>
+      <a href="item.php" class="tab active">Item</a>
+    </div>
+
+    <!-- メインコンテンツ 　php用に修正予定-->
+    <div class="content">
+      <div class="category-container">
+        <h1>Edit Checklist</h1>
+
+        <div class="fill-in-group">
+          <label for="name">name</label>
+          <input type="text" id="checklist-name" class="form-input" />
+          <label for="description">description</label>
+          <textarea id="description" rows="3" class="form-input"></textarea>
+        </div>
+      </div>
+      <!-- 仮　　　ボタンを押したらadd_category.phpが実行される -->
+      <button class="oval-button" onclick="window.location.href='add_checklist.php'">
+        <span class="plus-icon">+</span>
+        Edit Checklist
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>
