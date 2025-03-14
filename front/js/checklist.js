@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     const urlParams = new URLSearchParams(window.location.search);
     const categoryId = urlParams.get("category_id");
 
-    if (!categoryId) {
-        alert("カテゴリが選択されていません。");
-        window.location.href = "category.html";
-        return;
-    }
+    // if (!categoryId) {
+    //     alert("カテゴリが選択されていません。");
+    //     window.location.href = "category.html";
+    //     return;
+    // }
 
     console.log("✅ カテゴリID:", categoryId);
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             li.innerHTML = `
                 <span>${checklist.name}</span>
                 <div class="right-buttons">
-                    <button class="edit-button">Edit</button>
+                    <button class="edit-button" data-id="${checklist.id}">Edit</button>
                     <button class="delete-button" data-id="${checklist.id}">Delete</button>
                 </div>
             `;
@@ -53,15 +53,21 @@ document.addEventListener("DOMContentLoaded", async function () {
             });
         });
 
-        // ✅ 削除ボタンのイベントリスナーを `forEach` で適用
-        document.querySelectorAll(".delete-button").forEach(button => {
-            button.addEventListener("click", async function (event) {
-                event.stopPropagation(); // ✅ チェックリストのクリックイベントをキャンセル
+        // 🔹 編集ボタンのイベントリスナーを追加
+        document.querySelectorAll(".edit-button").forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.stopPropagation(); // ✅ 親要素（カテゴリのクリックイベント）を防ぐ
                 const checklistId = this.getAttribute("data-id");
+                editChecklist(checklistId);
+            });
+        });
 
-                if (confirm("このチェックリストを削除しますか？")) {
-                    await deleteChecklist(checklistId);
-                }
+        // 🔹 削除ボタンのイベントリスナーを追加
+        document.querySelectorAll(".delete-button").forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.stopPropagation(); // ✅ 親要素（カテゴリのクリックイベント）を防ぐ
+                const checklistId = this.getAttribute("data-id");
+                deleteChecklist(checklistId);
             });
         });
 
@@ -70,8 +76,35 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 });
 
+// ✅ チェックリスト更新処理
+async function editChecklist(checklistId) {
+    const newName = prompt("新しいチェックリスト名を入力してください:");
+    const newDescription = prompt("新しいチェックリストの説明を入力してください:");
+    if (!newName) return;
+
+    try {
+        const response = await fetch("http://localhost:8000/api/checklists.php", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id: checklistId, name: newName, description: newDescription })
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            alert("チェックリストが更新されました！");
+            location.reload();
+        } else {
+            alert("チェックリスト更新失敗: " + (result.error || "不明なエラー"));
+        }
+    } catch (error) {
+        console.error("❌ チェックリスト更新エラー:", error);
+    }
+}
+
 // ✅ チェックリスト削除処理
 async function deleteChecklist(checklistId) {
+    if (!confirm("このチェックリストを削除しますか？")) return;
+
     try {
         const response = await fetch("http://localhost:8000/api/checklists.php", {
             method: "DELETE",
@@ -80,8 +113,12 @@ async function deleteChecklist(checklistId) {
         });
 
         const result = await response.json();
-        alert(result.message);
-        location.reload();
+        if (response.ok) {
+            alert("チェックリストが削除されました！");
+            location.reload();
+        } else {
+            alert("チェックリスト削除失敗: " + (result.error || "不明なエラー"));
+        }
     } catch (error) {
         console.error("❌ チェックリスト削除エラー:", error);
     }

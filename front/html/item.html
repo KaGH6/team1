@@ -19,38 +19,21 @@
     <div class="tabs" id="nav-tabs">
       <a href="category.html" class="tab">Category</a>
       <a href="checklist.html" class="tab">Checklist</a>
-      <a href="item.html" class="tab active">Item</a>
+      <a href="item.html" class="tab">Item</a>
     </div>
     <!-- タスク一覧 -->
     <div class="content">
-      <ul class="todo-list">
-        <li class="todo-item">
-          <div class="task-left">
-            <input type="checkbox" class="task-checkbox" />
-            <span class="task-name">タスク 1</span>
-          </div>
-          <div class="task-right">
-            <button class="edit-button">Edit</button>
-            <button class="delete-button">Delete</button>
-          </div>
-        </li>
-      </ul>
+      <ul class="item-list"></ul>
       <div class="button-container">
-        <button class="oval-button add-button" onclick="window.location.href='add_checklist.php'">
+        <button class="oval-button add-button" id="add-item-btn" onclick="location.href='add_item.html'">
           <span class="plus-icon">+</span>
           Add Item
         </button>
-
-        <!-- <button
-            type="button"
-            class="return-button"
-            onclick="window.location.href='target.php';"
-          >
-            ← Return
-          </button> -->
       </div>
-      <!-- タスク追加ボタン -->
     </div>
+
+    <script src="../js/script.js" defer></script>
+    <script src="../js/item.js" defer></script>
 </body>
 
 </html>

@@ -24,26 +24,14 @@ $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {
     case 'GET': // 🔹 チェックリスト取得（ゲスト or ユーザー）
         $categoryId = $_GET["category_id"] ?? null;
-        $userId = $_GET["user_id"] ?? null;
-        $guestId = $_GET["guest_id"] ?? null;
 
         if (!$categoryId) {
             echo json_encode(["error" => "カテゴリIDが指定されていません"]);
             exit();
         }
 
-        if ($userId) {
-            // ログインユーザーのチェックリスト取得
-            $stmt = $conn->prepare("SELECT * FROM checklists WHERE category_id = ? AND user_id = ?");
-            $stmt->bind_param("ii", $categoryId, $userId);
-        } elseif ($guestId) {
-            // ゲストのチェックリスト取得
-            $stmt = $conn->prepare("SELECT * FROM checklists WHERE category_id = ? AND guest_id = ?");
-            $stmt->bind_param("is", $categoryId, $guestId);
-        } else {
-            echo json_encode(["error" => "認証情報がありません"]);
-            exit();
-        }
+        $stmt = $conn->prepare("SELECT * FROM checklists WHERE category_id = ?");
+        $stmt->bind_param("i", $categoryId);
 
         $stmt->execute();
         $result = $stmt->get_result();
@@ -65,21 +53,9 @@ switch ($method) {
         $name = $input["name"];
         $description = $input["description"] ?? "";
         $categoryId = $input["category_id"];
-        $userId = $input["user_id"] ?? null;
-        $guestId = $input["guest_id"] ?? null;
 
-        if ($userId) {
-            // ログインユーザーの場合
-            $stmt = $conn->prepare("INSERT INTO checklists (name, description, category_id, user_id) VALUES (?, ?, ?, ?)");
-            $stmt->bind_param("ssii", $name, $description, $categoryId, $userId);
-        } elseif ($guestId) {
-            // ゲストの場合
-            $stmt = $conn->prepare("INSERT INTO checklists (name, description, category_id, guest_id) VALUES (?, ?, ?, ?)");
-            $stmt->bind_param("ssis", $name, $description, $categoryId, $guestId);
-        } else {
-            echo json_encode(["error" => "認証情報がありません"]);
-            exit();
-        }
+        $stmt = $conn->prepare("INSERT INTO checklists (name, description, category_id) VALUES (?, ?, ?)");
+        $stmt->bind_param("ssi", $name, $description, $categoryId);
 
         $stmt->execute();
         echo json_encode(["message" => "チェックリスト作成成功"]);
@@ -92,13 +68,8 @@ switch ($method) {
             exit;
         }
 
-        if (isset($_SESSION["user_id"])) {
-            $stmt = $conn->prepare("UPDATE checklists SET name = ?, description = ? WHERE id = ? AND user_id = ?");
-            $stmt->bind_param("ssii", $input["name"], $input["description"], $input["id"], $_SESSION["user_id"]);
-        } else {
-            $stmt = $conn->prepare("UPDATE checklists SET name = ?, description = ? WHERE id = ? AND guest_id = ?");
-            $stmt->bind_param("ssis", $input["name"], $input["description"], $input["id"], $_SESSION["guest_id"]);
-        }
+        $stmt = $conn->prepare("UPDATE checklists SET name = ?, description = ? WHERE id = ?");
+        $stmt->bind_param("ssi", $input["name"], $input["description"], $input["id"]);
 
         $stmt->execute();
         echo json_encode(["message" => "チェックリスト更新成功"]);
@@ -110,15 +81,8 @@ switch ($method) {
             echo json_encode(["error" => "IDが指定されていません"]);
             exit;
         }
-
-        if (isset($_SESSION["user_id"])) {
-            $stmt = $conn->prepare("DELETE FROM checklists WHERE id = ? AND user_id = ?");
-            $stmt->bind_param("ii", $input["id"], $_SESSION["user_id"]);
-        } else {
-            $stmt = $conn->prepare("DELETE FROM checklists WHERE id = ? AND guest_id = ?");
-            $stmt->bind_param("is", $input["id"], $_SESSION["guest_id"]);
-        }
-
+        $stmt = $conn->prepare("DELETE FROM checklists WHERE id = ?");
+        $stmt->bind_param("i", $input["id"]);
         $stmt->execute();
         echo json_encode(["message" => "チェックリスト削除成功"]);
         break;

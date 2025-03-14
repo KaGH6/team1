@@ -17,9 +17,9 @@
   <div class="container">
     <!-- ナビゲーションタブ -->
     <div class="tabs">
-      <a href="category.php" class="tab">Category</a>
-      <a href="checklist.php" class="tab">Checklist</a>
-      <a href="item.php" class="tab active">Item</a>
+      <a href="category.html" class="tab">Category</a>
+      <a href="checklist.html" class="tab">Checklist</a>
+      <a href="item.html" class="tab">Item</a>
     </div>
 
     <!-- メインコンテンツ 　php用に修正予定-->
@@ -31,7 +31,7 @@
           <label for="name">name</label>
           <input type="text" id="checklist-name" class="form-input" />
           <label for="description">description</label>
-          <textarea id="description" rows="3" class="form-input"></textarea>
+          <textarea id="checklist-description" rows="3" class="form-input"></textarea>
           <input type="hidden" id="category-id" />
         </div>
       </div>
@@ -43,6 +43,7 @@
     </div>
   </div>
   
+  <script src="../js/script.js" defer></script>
   <script src="../js/add_checklist.js" defer></script>
 </body>
 

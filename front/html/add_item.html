@@ -17,9 +17,9 @@
   <div class="container">
     <!-- ナビゲーションタブ -->
     <div class="tabs">
-      <a href="category.php" class="tab">Category</a>
-      <a href="checklist.php" class="tab">Checklist</a>
-      <a href="item.php" class="tab active">Item</a>
+      <a href="category.html" class="tab">Category</a>
+      <a href="checklist.html" class="tab">Checklist</a>
+      <a href="item.html" class="tab">Item</a>
     </div>
 
     <!-- メインコンテンツ 　php用に修正予定-->
@@ -33,12 +33,15 @@
         </div>
       </div>
       <!-- 仮　　　ボタンを押したらadd_category.phpが実行される -->
-      <button class="oval-button" onclick="window.location.href='add_item.php'">
+      <button class="oval-button" id="add-item-btn">
         <span class="plus-icon">+</span>
         Add Item
       </button>
     </div>
   </div>
+
+  <script src="../js/script.js" defer></script>
+  <script src="../js/add_item.js" defer></script>
 </body>
 
 </html>

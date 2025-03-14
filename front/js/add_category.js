@@ -38,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        console.log("🛠 送信データ:", JSON.stringify(requestData));
+
         try {
             const response = await fetch("http://localhost:8000/api/categories.php", {
                 method: "POST",

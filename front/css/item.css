@@ -1,9 +1,9 @@
-.todo-list {
+.item-list {
   list-style: none;
   padding: 0;
 }
 
-.todo-item {
+.check-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
