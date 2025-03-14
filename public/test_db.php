@@ -1,5 +1,5 @@
 <?php
-require '../includes/db.php';  // db.php を読み込む
+require '../api/db.php';  // db.php を読み込む
 
 // 接続が成功しているか確認
 if ($conn->connect_error) {
