@@ -246,3 +246,7 @@ h1 {
   font-weight: 900;
   font-style: italic;
 }
+
+.hidden {
+  display: none !important; /* 強制適用 */
+}

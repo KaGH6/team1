@@ -1,65 +1,47 @@
 <!doctype html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>category</title>
-  <!-- リセットCSS: ブラウザのデフォルトスタイルをリセット -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css" />
   <link rel="stylesheet" href="../css/category.css" />
   <link rel="stylesheet" href="../css/style.css" />
-  <!-- Googleフォントの読み込み (オプション) -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 
 <body>
   <div class="container">
     <header>
-      <div class="tabs">
-        <a href="category.php" class="tab">Login</a>
-        <a href="checklist.php" class="tab">Checklist</a>
+      <div class="tabs" id="auth-tabs">
+        <a href="login.html" class="tab" id="login-tab">Log in</a>
+        <a href="signup.html" class="tab" id="signup-tab">Sign up</a>
+        <a href="#" id="logout-btn" class="tab logout-button hidden">Log out</a>
       </div>
     </header>
-    <!-- ナビゲーションタブ -->
-    <div class="tabs">
-      <a href="category.php" class="tab">Category</a>
-      <a href="checklist.php" class="tab">Checklist</a>
-      <a href="item.php" class="tab active">Item</a>
+
+    <!-- ナビゲーションタブ（ログインユーザーのみ表示） -->
+    <div class="tabs hidden" id="nav-tabs">
+      <a href="category.html" class="tab">Category</a>
+      <a href="checklist.html" class="tab">Checklist</a>
+      <a href="item.html" class="tab">Item</a>
     </div>
 
-    <!-- メインコンテンツ 　php用に修正予定-->
+    <!-- メインコンテンツ -->
     <div class="content">
-      <ul class="category-list">
-        <li class="category-item">
-          <span>Inbox</span>
-          <div class="right-buttons">
-            <button class="edit-button">Edit</button>
-            <button class="delete-button">Delete</button>
-          </div>
-        </li>
-        <li class="category-item">
-          <span>Today</span>
-          <div class="right-buttons">
-            <button class="edit-button">Edit</button>
-            <button class="delete-button">Delete</button>
-          </div>
-        </li>
-        <li class="category-item">
-          <span>Upcoming</span>
-          <div class="right-buttons">
-            <button class="edit-button">Edit</button>
-            <button class="delete-button">Delete</button>
-          </div>
-        </li>
+      <ul class="category-list" id="category-list">
+        <!-- カテゴリー一覧 -->
       </ul>
-      <!-- 仮　　　ボタンを押したらadd_category.phpが実行される -->
-      <button class="oval-button add-button" onclick="window.location.href='add_category.php'">
-        <span class="plus-icon">+</span>
-        Add Category
+      <!-- カテゴリー追加ボタン（ログインユーザーのみ表示） -->
+      <button class="oval-button add-button hidden" id="add-category-btn" onclick="location.href='add_category.html'">
+        <span class="plus-icon">+</span> Add Category
       </button>
     </div>
   </div>
-</body>
 
+  <script src="../js/auth.js" defer></script>
+  <script src="../js/script.js" defer></script>
+  <script src="../js/category.js" defer></script>
+
+</body>
 </html>

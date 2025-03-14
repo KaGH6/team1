@@ -40,26 +40,11 @@ body {
 
 .button-group {
   display: flex;
+  justify-content: flex-end;
   gap: 5px;
 }
 
-.login-btn {
-  flex: 1;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.login-btn:hover {
-  background-color: #0056b3;
-}
-
-.signup-btn {
-  flex: 1;
+.sign-btn {
   padding: 10px 20px;
   font-size: 16px;
   color: #ffffff;
@@ -69,21 +54,6 @@ body {
   cursor: pointer;
 }
 
-.signup-btn:hover {
+.sign-btn:hover {
   background-color: #218838;
-}
-
-.guest-login-btn {
-  flex: 1;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #6c757d;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.guest-login-btn:hover {
-  background-color: #5a6268;
 }

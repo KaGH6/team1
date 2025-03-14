@@ -32,15 +32,18 @@
           <input type="text" id="checklist-name" class="form-input" />
           <label for="description">description</label>
           <textarea id="description" rows="3" class="form-input"></textarea>
+          <input type="hidden" id="category-id" />
         </div>
       </div>
       <!-- 仮　　　ボタンを押したらadd_category.phpが実行される -->
-      <button class="oval-button" onclick="window.location.href='add_checklist.php'">
+      <button class="oval-button" id="add-checklist-btn">
         <span class="plus-icon">+</span>
         Add Checklist
       </button>
     </div>
   </div>
+  
+  <script src="../js/add_checklist.js" defer></script>
 </body>
 
 </html>

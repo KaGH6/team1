@@ -22,7 +22,6 @@
       <a href="item.php" class="tab active">Item</a>
     </div>
 
-    <!-- メインコンテンツ 　php用に修正予定-->
     <div class="content">
       <div class="category-container">
         <h1>Add category</h1>
@@ -32,13 +31,15 @@
           <input type="text" id="category-name" class="form-input" />
         </div>
       </div>
-      <!-- 仮　　　ボタンを押したらadd_category.phpが実行される -->
-      <button class="oval-button" onclick="window.location.href='add_category.php'">
+
+      <button class="oval-button" id="add-category-btn" type="button">
         <span class="plus-icon">+</span>
         Add Category
       </button>
     </div>
   </div>
+
+  <script src="../js/add_category.js" defer></script>
 </body>
 
 </html>
