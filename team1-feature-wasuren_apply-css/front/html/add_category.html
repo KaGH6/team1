@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>add_category</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- リセットCSS: ブラウザのデフォルトスタイルをリセット -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css"
+    />
+    <link rel="stylesheet" href="../css/add_or_edit.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Googleフォントの読み込み (オプション) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- ナビゲーションタブ -->
+      <div class="tabs">
+        <a href="category.php" class="tab">Category</a>
+        <a href="checklist.php" class="tab">Checklist</a>
+        <a href="item.php" class="tab active">Item</a>
+      </div>
+
+      <div class="content">
+        <div class="category-container">
+          <h1>Add category</h1>
+
+          <div class="fill-in-group">
+            <label for="name">name</label>
+            <input type="text" id="category-name" class="form-input" />
+          </div>
+        </div>
+
+        <button class="oval-button" id="add-category-btn" type="button">
+          <span class="plus-icon">+</span>
+          Add Category
+        </button>
+      </div>
+    </div>
+
+    <script src="../js/add_category.js" defer></script>
+  </body>
+</html>

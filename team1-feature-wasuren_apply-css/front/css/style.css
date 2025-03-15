@@ -1,0 +1,360 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    'Roboto',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+body {
+  background-color: #f5f5f7;
+  color: #333;
+}
+
+.mylogin,
+.mysignup {
+  background-color: #f7f7f7;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ナビゲーションタブのスタイル */
+.tabs {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 15px 20px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+.tab.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #007aff;
+}
+
+/* コンテンツエリア */
+.content {
+  padding: 20px;
+}
+
+/* タスク一覧 */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* タスク追加ボタン */
+.oval-button {
+  background-color: #4F5E5D;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin-top: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* 中央揃え */
+  transition: 0.3s;
+}
+
+.oval-button:hover {
+  background-color: #787e7d;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+}
+
+.fill-in-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+}
+
+.fill-in-group input {
+  max-width: 50%;
+}
+
+.form-input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+}
+
+/* <weight>: Use a value from 100 to 900 */
+/* <uniquifier>: Use a unique and descriptive class name */
+
+/* .noto-sans-jp-<uniquifier> {
+  font-family: "Noto Sans JP", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+.noto-sans-jp-400 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-sans-jp-500 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.noto-sans-jp-700 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.dancing-script-700 {
+  font-family: 'Dancing Script', serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-thin {
+  font-family: 'Poppins', serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: 'Poppins', serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: 'Poppins', serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular-400 {
+  font-family: 'Poppins', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium-500 {
+  font-family: 'Poppins', serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: 'Poppins', serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold-700 {
+  font-family: 'Poppins', serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: 'Poppins', serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: 'Poppins', serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: 'Poppins', serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: 'Poppins', serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: 'Poppins', serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: 'Poppins', serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: 'Poppins', serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: 'Poppins', serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: 'Poppins', serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: 'Poppins', serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: 'Poppins', serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.hidden {
+  display: none !important;
+  /* 強制適用 */
+}
+
+/* 追記 */
+.edit-button {
+  background-color: #f3c97c;
+  color: #fff;
+}
+
+.edit-button:hover {
+  background-color: #e0a800;
+}
+
+.delete-button {
+  background-color: #F3827C;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.item-container span,
+.category-item span,
+.checklist-container {
+  transition: 0.3s;
+}
+
+.item-container span:hover,
+.category-item span:hover,
+.checklist-container:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* 全体の要素を横並び表示 */
+.category-list {
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: 10px; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.mychecklist .category-list {
+  display: block;
+}
+
+.category-item {
+  height: clamp(110px, 130/1280*100vw, 130px);
+  position: relative;
+  border: 1px solid #d3d3d3;
+  padding: 1em;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.category-item span {
+  width: 83%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* 2行で省略 */
+  overflow: hidden;
+  position: absolute;
+  top: 20%;
+  left: 8%;
+}
+
+.category-item .right-buttons {
+  position: absolute;
+  right: 3%;
+  bottom: 8%;
+}
+
+
+@media screen and (max-width: 767px) {
+  .category-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+  }
+
+  .category-item span {
+    left: 5%;
+  }
+
+
+}

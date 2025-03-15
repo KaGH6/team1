@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <title>add_checklist</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- リセットCSS: ブラウザのデフォルトスタイルをリセット -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css" />
+  <link rel="stylesheet" href="../css/add_or_edit.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Googleフォントの読み込み (オプション) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- ナビゲーションタブ -->
+    <div class="tabs">
+      <a href="category.html" class="tab">Category</a>
+      <a href="checklist.html" class="tab">Checklist</a>
+      <a href="item.html" class="tab">Item</a>
+    </div>
+
+    <!-- メインコンテンツ 　php用に修正予定-->
+    <div class="content">
+      <div class="category-container">
+        <h1>Add Checklist</h1>
+
+        <div class="fill-in-group">
+          <label for="name">name</label>
+          <input type="text" id="checklist-name" class="form-input" />
+          <label for="description">description</label>
+          <textarea id="checklist-description" rows="3" class="form-input"></textarea>
+          <label for="reminder-time">reminder date</label>
+          <input type="datetime-local" id="reminder-time">
+          <input type="hidden" id="category-id" />
+        </div>
+      </div>
+      <!-- 仮ボタンを押したらadd_category.phpが実行される -->
+      <button class="oval-button" id="add-checklist-btn">
+        <span class="plus-icon">+</span>
+        Add Checklist
+      </button>
+    </div>
+  </div>
+
+  <script src="../js/script.js" defer></script>
+  <script src="../js/add_checklist.js" defer></script>
+</body>
+
+</html>
