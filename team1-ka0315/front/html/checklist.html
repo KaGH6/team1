@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- リセットCSS: ブラウザのデフォルトスタイルをリセット -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css" />
+  <link rel="stylesheet" href="../css/checklist.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Googleフォントの読み込み (オプション) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../img/favicon.png">
+  <title>Checklist｜わすれん</title>
+</head>
+
+<body>
+  <div class="container mychecklist">
+    <!-- ナビゲーションタブ -->
+    <div class="tabs" id="nav-tabs">
+      <a href="category.html"><img src="../img/logo.png" alt="わすれん"></a>
+      <a href="category.html" class="tab">Category</a>
+      <a href="checklist.html" class="tab">Checklist</a>
+      <a href="item.html" class="tab">Item</a>
+    </div>
+
+    <!-- メインコンテンツ 　php用に修正予定-->
+    <div class="content">
+      <ul class="category-list"></ul>
+
+      <div class="button-container">
+        <button class="oval-button add-button" id="add-checklist-btn" onclick="location.href='add_checklist.html'">
+          <span class="plus-icon">+</span>
+          Add Checklist
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/script.js" defer></script>
+  <script src="../js/checklist.js" defer></script>
+  <script src="../js/notification.js" defer></script>
+</body>
+
+</html>

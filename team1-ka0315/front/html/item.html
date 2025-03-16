@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- リセットCSS: ブラウザのデフォルトスタイルをリセット -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css" />
+  <!-- Googleフォントの読み込み -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- カスタムCSSの読み込み -->
+  <link rel="stylesheet" href="../css/item.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../img/favicon.png">
+  <title>Item｜わすれん</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="tabs" id="nav-tabs">
+      <a href="category.html"><img src="../img/logo.png" alt="わすれん"></a>
+      <a href="category.html" class="tab">Category</a>
+      <a href="checklist.html" class="tab">Checklist</a>
+      <a href="item.html" class="tab">Item</a>
+    </div>
+    <!-- タスク一覧 -->
+    <div class="content">
+      <ul class="item-list"></ul>
+      <div class="button-container">
+        <button class="oval-button add-button" id="add-item-btn" onclick="location.href='add_item.html'">
+          <span class="plus-icon">+</span>
+          Add Item
+        </button>
+      </div>
+    </div>
+
+    <script src="../js/script.js" defer></script>
+    <script src="../js/item.js" defer></script>
+    <script src="../js/notification.js" defer></script>
+</body>
+
+</html>
